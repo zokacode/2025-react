@@ -5,14 +5,37 @@
 <!-- 🔥🔥練習開始🔥🔥 -->
 <div id="root"></div>
 <!-- template：https://getbootstrap.com/docs/5.2/components/card/ -->
+
 <script type="text/babel">
-console.log(React, ReactDOM);
+  console.log(React, ReactDOM);
 
+  function App() {
+    const data = {
+      img: 'https://images.unsplash.com/photo-1560169897-9c56beea5647',
+      title: 'Card 標題',
+      content: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+      link: 'https://getbootstrap.com/docs/5.2/components/card/',
+    };
 
-const el = document.getElementById('root');
+    return (
+      <div className="card">
+        <img src={ data.img } className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{ data.title}</h5>
+          <p className="card-text">{ data.content }</p>
+          <a href={ data.link } target="_blank" className="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    );
+  }
+
+  const el = document.getElementById('root');
+  const root = ReactDOM.createRoot(el);
+  root.render(<App />);
 </script>
 
 <!-- 🙇🙇練習結束🙇🙇 -->
+
 </main>
   
     <aside
