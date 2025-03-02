@@ -7,6 +7,31 @@
 <!-- https://reactjs.org/docs/cdn-links.html#gatsby-focus-wrapper -->
 <!-- https://reactjs.org/docs/add-react-to-a-website.html#quickly-try-jsx -->
 
+<!-- 引入react -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+  // 確認資源
+  console.log(React, ReactDOM);
+
+  // 建立元件
+  function App() {
+    return (
+      <div>
+        <h1>這是 React</h1>
+      </div>
+    );
+  }
+
+  // 渲染畫面
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<App />);
+</script>
+
+<div id="root"></div>
+
 <!-- 補充說明：定義 App 元件時，可自訂名稱但請使用大寫做開頭 -->
 <!-- 詳細說明文件：https://zh-hant.reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized -->
 <!-- 🙇🙇練習結束🙇🙇 -->
