@@ -10,6 +10,24 @@
   https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_Operators
 -->
 <script>
+
+// 陳述式
+let a = 1;
+// 表達式
+a = 2;
+
+const text = typeof a === 'number' ? 'number' : 'string';
+console.log(text);
+
+// 陳述式
+function fn1() {
+  console.log('陳述式');
+}
+// 表達式
+const fn2 = function() {
+  console.log('表達式');
+}
+
 // 表達式與陳述式的差異
 </script>
 
@@ -22,6 +40,15 @@ function App() {
     description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi culpa aspernatur tempore cupiditate illo minima voluptatem blanditiis optio accusantium earum voluptate magni repellendus, ipsa dolor adipisci libero qui commodi veritatis.',
     link: 'https://www.casper.tw/'
   }
+
+  const list = [
+    <li className="list-group-item">An item</li>,
+    <li className="list-group-item">A second item</li>,
+    <li className="list-group-item">A third item</li>,
+    <li className="list-group-item">A fourth item</li>,
+    <li className="list-group-item">And a fifth one</li>,
+  ];
+
   return <div className="card w-50">
     <img src={data.imageUrl} className="card-img-top" alt="..." />
     <div className="card-body">
@@ -29,6 +56,13 @@ function App() {
       <p className="card-text">{ data.description }</p>
       <a href={data.link} target="_blank" className="btn btn-primary">Go somewhere</a>
     </div>
+
+    <ul className="list-group list-group-flush">
+      { list }
+    </ul>
+    
+
+
   </div>
 }
 
