@@ -42,11 +42,11 @@ function App() {
   }
 
   const list = [
-    <li className="list-group-item">An item</li>,
-    <li className="list-group-item">A second item</li>,
-    <li className="list-group-item">A third item</li>,
-    <li className="list-group-item">A fourth item</li>,
-    <li className="list-group-item">And a fifth one</li>,
+    <li className="list-group-item">第一項</li>,
+    <li className="list-group-item">第二項</li>,
+    <li className="list-group-item">第三項</li>,
+    <li className="list-group-item">第四項</li>,
+    <li className="list-group-item">第五項</li>,
   ];
 
   return <div className="card w-50">
@@ -56,12 +56,14 @@ function App() {
       <p className="card-text">{ data.description }</p>
       <a href={data.link} target="_blank" className="btn btn-primary">Go somewhere</a>
     </div>
+    { 1 }
+
+    { /* JSON.stringify(data) */ }
+    { [1, 2, 3, <div>TEST</div>, ] }
 
     <ul className="list-group list-group-flush">
       { list }
     </ul>
-    
-
 
   </div>
 }
