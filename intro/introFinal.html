@@ -9,6 +9,59 @@
   https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
  -->
 <div id="root"></div>
+
+<script type="text/babel">
+
+  const products = [
+    {
+      title: '牙刷',
+      price: 99,
+      link: 'https://www.google.com.tw/',
+      imgUrl: 'https://images.unsplash.com/photo-1520013573795-38516d2661e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80',
+    },
+    {
+      title: '海綿',
+      price: 65,
+      link: 'https://twitter.com/',
+      imgUrl: 'https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    },
+    {
+      title: '掛勾',
+      price: 120,
+      link: 'https://www.facebook.com/WccCasper/',
+      imgUrl: 'https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    },
+  ];
+
+  const CardDiv = ({ title, price, link, imgUrl }) => {
+    return <>
+      <div className="col">
+        <a className="card" target="_blank" rel="noreferrer" href={ link } >
+          <img src={ imgUrl } className="card-img-top object-fit" alt="..." />
+          <div className="card-body">
+            <span className="text-dark">{ title }</span>
+            <span className="float-end">${ price }</span>
+          </div>
+        </a>
+      </div>
+    </>
+  };
+
+  function App() {
+    return <>
+      <div className="row row-cols-3">
+        {products.map((item, index) => (
+          <CardDiv key={index} {...item} />
+        ))}
+      </div>
+    </>;
+  }
+
+  ReactDOM
+    .createRoot(document.getElementById('root'))
+    .render(<App />);
+</script>
+
 <!-- <div class="row row-cols-3">
   <div class="col">
     <a class="card" target="_blank" href="https://www.google.com.tw/" >
@@ -39,7 +92,7 @@
   </div>
 </div> -->
 <style>
-  /* .object-fit {
+  .object-fit {
     object-fit: cover;
   }
   .card-img-top {
@@ -52,7 +105,7 @@
   a.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .26);
-  } */
+  }
 </style>
 
 <!-- 🙇🙇練習結束🙇🙇 -->
